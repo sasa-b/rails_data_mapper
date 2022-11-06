@@ -17,7 +17,7 @@ class Dependency
     end
 
     def inject(*keys)
-      @instance.autowire.call(keys)
+      @instance.autowire[*keys]
     end
   end
 
@@ -25,9 +25,5 @@ class Dependency
     @app = app
     @container = container
     @autowire = Dry::AutoInject(container)
-  end
-
-  def [](name)
-    container[name]
   end
 end
