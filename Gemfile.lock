@@ -81,6 +81,13 @@ GEM
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     csv (3.2.5)
+    database_cleaner (2.0.1)
+      database_cleaner-active_record (~> 2.0.0)
+    database_cleaner-active_record (2.0.1)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
+    diff-lcs (1.5.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -231,6 +238,36 @@ GEM
       dry-types (~> 1.0)
       rom (~> 5.2, >= 5.2.1)
       sequel (>= 4.49)
+    rspec-core (3.12.0)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-rails (6.0.1)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.11)
+      rspec-expectations (~> 3.11)
+      rspec-mocks (~> 3.11)
+      rspec-support (~> 3.11)
+    rspec-support (3.12.0)
+    rubocop (1.38.0)
+      json (~> 2.3)
+      parallel (~> 1.10)
+      parser (>= 3.1.2.1)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.23.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.23.0)
+      parser (>= 3.1.1.0)
+    ruby-progressbar (1.11.0)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -316,6 +353,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  database_cleaner
   dotenv-rails
   dry-auto_inject
   dry-container
@@ -329,6 +367,8 @@ DEPENDENCIES
   rbs_rails
   rom-rails
   rom-sql
+  rspec-rails
+  rubocop
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
   sequel

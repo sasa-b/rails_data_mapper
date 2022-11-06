@@ -1,0 +1,17 @@
+class App
+  class Container
+    include Dry::Container::Mixin
+  end
+
+  attr_reader app: Rails::Application
+
+  attr_reader container: Container
+
+  attr_reader self.instance: App
+
+  def self.configure: () { (untyped) -> untyped } -> untyped
+
+  def initialize: (Rails::Application app, Container container) -> void
+
+  def []: (string name) -> Class
+end
