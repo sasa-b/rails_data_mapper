@@ -1,17 +1,21 @@
-class App
-  class Container
-    include Dry::Container::Mixin
-  end
+class Dependency
+    class Container
+      include Dry::Container::Mixin
+    end
 
-  attr_reader app: Rails::Application
+    attr_reader app: Rails::Application
 
-  attr_reader container: Container
+    attr_reader container: Container
 
-  attr_reader self.instance: App
+    attr_reader autowire: untyped
 
-  def self.configure: () { (untyped) -> untyped } -> untyped
+    attr_reader self.instance: Dependency
 
-  def initialize: (Rails::Application app, Container container) -> void
+    def self.configure: () { (Container) -> void } -> void
 
-  def []: (string name) -> Class
+    def self.inject: (*String keys) -> untyped
+
+    def initialize: (Rails::Application app, Container container) -> void
+
+    def []: (String name) -> Class
 end

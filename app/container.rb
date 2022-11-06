@@ -1,26 +1,30 @@
 require 'dry-container'
 
-class App
+class Dependency
   class Container
     include Dry::Container::Mixin
   end
 
-  attr_reader :app, :container
+  attr_reader :app, :container, :autowire
 
   class << self
     attr_reader :instance
-  end
+    def configure
+      container = Container.new
+      yield(container)
+      @instance = new(Rails.application, container)
+      freeze
+    end
 
-  def self.configure
-    container = Container.new
-    yield(container)
-    @instance = new(Rails.application, container)
-    freeze
+    def inject(*keys)
+      @instance.autowire.call(keys)
+    end
   end
 
   def initialize(app, container)
     @app = app
     @container = container
+    @autowire = Dry::AutoInject(container)
   end
 
   def [](name)
