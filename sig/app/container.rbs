@@ -7,7 +7,7 @@ class Dependency
 
     attr_reader container: Container
 
-    attr_reader autowire: untyped
+    attr_reader autowire: Proc
 
     attr_reader self.instance: Dependency
 

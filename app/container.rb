@@ -9,6 +9,7 @@ class Dependency
 
   class << self
     attr_reader :instance
+
     def configure
       container = Container.new
       yield(container)
