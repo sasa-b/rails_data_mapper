@@ -321,6 +321,8 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
+    typeprof (0.21.3)
+      rbs (>= 1.8.1)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.3.0)
@@ -376,6 +378,7 @@ DEPENDENCIES
   sqlite3 (~> 1.4)
   steep
   turbolinks (~> 5)
+  typeprof
   tzinfo-data
   web-console (>= 4.1.0)
   webdrivers

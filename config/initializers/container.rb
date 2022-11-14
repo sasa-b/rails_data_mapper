@@ -1,6 +1,8 @@
-require_relative '../../app/container.rb'
+# frozen_string_literal: true
+require_relative '../../src/infra/dependency/container'
+require_relative '../../src/infra/dependency/auto_wire'
 
-Dependency.configure do |container|
+Infra::Dependency::AutoWire.configure do |container|
   container.register :persistence do
     ROM.env
   end

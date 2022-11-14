@@ -75,6 +75,6 @@ gem 'net-smtp', require: false
 
 # RBS and static analysis
 gem 'rbs_rails', require: false
-gem 'steep'
-
+gem 'steep', require: false
+gem 'typeprof', require: false
 gem 'rubocop', require: false

@@ -1,0 +1,19 @@
+module Infra
+  module Dependency
+    class AutoWire
+      attr_reader self.instance: AutoWire
+
+      attr_reader app: Rails::Application
+
+      attr_reader container: Container
+
+      attr_reader autowire: Proc
+
+      def self.configure: () { (Container) -> void } -> void
+
+      def self.inject: (*Symbol keys) -> Proc
+
+      def initialize: (Rails::Application app, Container container) -> void
+    end
+  end
+end
