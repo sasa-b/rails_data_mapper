@@ -11,7 +11,7 @@ module Infra
 
       def self.configure: () { (Container) -> void } -> void
 
-      def self.inject: (*Symbol keys) -> Proc
+      def self.inject: (*Symbol keys) -> untyped
 
       def initialize: (Rails::Application app, Container container) -> void
     end

@@ -34,9 +34,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 # Ruby Object Mapper
+gem 'rom'
 gem 'rom-sql'
-gem 'rom-rails'
-# gem 'rom-repository'
+gem 'rom-rails', git: 'https://github.com/sasa-b/rom-rails.git', branch: 'autoload-namespace'
+gem 'rom-repository'
 
 # Dependency Injection
 gem 'dry-container'
